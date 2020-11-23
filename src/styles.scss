@@ -38,3 +38,26 @@ svg.material-icons {
 svg.material-icons:not(:last-child) {
     margin-right: 8px;
 }
+
+
+//Flex Grid
+.flex-container {
+    display: flex;
+}
+
+.col {
+    margin: 10px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    &.col-1-3 {
+        max-width: 33%;
+    }
+
+    &.col-2-3 {
+        max-width: 66%
+    }
+}
+
+img {
+    max-width: 100%;
+}

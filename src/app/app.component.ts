@@ -4,7 +4,7 @@ import { CardComponent } from './card/card.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
   
 })
 
