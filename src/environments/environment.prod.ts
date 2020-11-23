@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  apiEnpoint: 'http://www.omdbapi.com/',
+  apiKey: 'to-be-defined'
 };
