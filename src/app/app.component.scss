@@ -7,6 +7,7 @@ $active: #1A72B0;
     color: #61696E;
     border-radius: 6px;
     background: #F7F8F9;
+    margin-right: 8px;
     overflow: hidden;
 
     .button {
@@ -34,6 +35,7 @@ $active: #1A72B0;
             &::before {
                 height: 100%;
                 bottom: 0;
+                opacity: .8;
             }
         }
 
@@ -45,8 +47,31 @@ $active: #1A72B0;
             position: absolute;
             bottom: 50%;
             left: 0;
+            opacity: 0;
             transition: all .2s ease-in-out;
             z-index: -1;
+        }
+    }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+    .button-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+
+        .button {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .button-group {
+        .button {
+            width: 100%;
+            border: none;
         }
     }
 }

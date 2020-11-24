@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DecadePipe implements PipeTransform {
 
-  transform(movies:any[], decade:any): unknown {
-    if(decade === 'all') {
+  transform(movies:any[], decade:any=null): unknown {
+    if(decade === 'all' || decade === null) {
       return movies;
     } else {
       decade = parseInt(decade);

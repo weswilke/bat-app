@@ -38,8 +38,17 @@ img {
     font-weight: 400;
     float: right;
     transition: all 0.2s ease-in-out;
+    text-align: center;
 
     &:hover {
         box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+    }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 550px) {
+    .button {
+        float: none;
+        display: block;
     }
 }

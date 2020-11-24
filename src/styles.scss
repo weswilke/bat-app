@@ -66,6 +66,16 @@ svg.material-icons:not(:last-child) {
     }
 }
 
+/* Responsive Styles */
 img {
     max-width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+    .flex-container {
+        display: block;
+    }
+    .col {
+        max-width: 100% !important;
+    }
 }
