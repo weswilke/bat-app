@@ -222,12 +222,11 @@
     <Card *ngFor="let movie of movies">
       <MovieSnippet 
         [title]="movie.Title"
-        rating="TBD"
-        runtime="TBD"
         [releaseDate]="movie.Year"
         [thumbnail]="movie.Poster"
-        [link]="'https://www.imdb.com/title/'+movie.imdbID">
-        Content TBD
+        [link]="'https://www.imdb.com/title/'+movie.imdbID"
+        [imdbID]="movie.imdbID"
+        [windowPos]="windowPos">
       </MovieSnippet>
     </Card>
   </div>

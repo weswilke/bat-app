@@ -13,12 +13,20 @@ export class ApiService {
     this.constructUrl(environment.apiEnpoint);
   }
 
-  private url:URL;
+  private base:string;
 
   public getMoviesByTitle(title:string) { 
-    const url:URL = this.url;
-    
+    const url:URL = new URL(this.base);
+
     url.searchParams.append('s', title);
+
+    return this.http.get(url.href);
+  }
+
+  public getMovieById(id:string) {
+    const url:URL = new URL(this.base);
+
+    url.searchParams.append('i', id);
 
     return this.http.get(url.href);
   }
@@ -27,6 +35,6 @@ export class ApiService {
     const url = new URL(endpoint);
     url.searchParams.append('apiKey', environment.apiKey);
 
-    this.url = url;
+    this.base = url.href;
   }
 }
