@@ -1,0 +1,52 @@
+$border-color: #61696E;
+$active: #1A72B0;
+
+.button-group { 
+    align-self: flex-end;
+    border: 1px solid $border-color;
+    color: #61696E;
+    border-radius: 6px;
+    background: #F7F8F9;
+    overflow: hidden;
+
+    .button {
+        display: inline-block;
+        position: relative;
+        border-right: 1px solid $border-color;
+        padding: 0.5rem 1rem;
+        font-weight: 400;
+        cursor: pointer;
+        z-index: 1;
+        transition: all .2s ease-in-out;
+
+        &.active {
+            background: $active;
+            color: #fff;
+        }
+
+        &:last-child {
+            border: none;
+        }
+
+        &:hover {
+            color: #fff;
+
+            &::before {
+                height: 100%;
+                bottom: 0;
+            }
+        }
+
+        &::before {
+            content: '';
+            background: $active;
+            width: calc(100% + 1px);
+            height: 0;
+            position: absolute;
+            bottom: 50%;
+            left: 0;
+            transition: all .2s ease-in-out;
+            z-index: -1;
+        }
+    }
+}

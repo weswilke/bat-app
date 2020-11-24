@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { MovieSnippetComponent } from './movie-snippet/movie-snippet.component';
+import { DecadePipe } from './decade.pipe';
 
 
 
@@ -12,7 +13,8 @@ import { MovieSnippetComponent } from './movie-snippet/movie-snippet.component';
   declarations: [
     AppComponent,
     CardComponent,
-    MovieSnippetComponent
+    MovieSnippetComponent,
+    DecadePipe
   ],
   imports: [
     BrowserModule,

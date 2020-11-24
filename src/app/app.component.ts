@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { ApiService } from './api.service';
+import { DecadePipe } from './decade.pipe';
 import { Subject, fromEvent } from 'rxjs';
 import { takeUntil} from 'rxjs/operators';
 
@@ -15,6 +16,9 @@ export class AppComponent implements OnInit, OnDestroy {
   destroy = new Subject();
   destroy$ = this.destroy.asObservable();
   windowPos = 0;
+  decades = ['all', 2010, 2000, 1990, 1980];
+  decade = 'all';
+
   public movies:any[];
 
   constructor(private apiService:ApiService) {
@@ -38,5 +42,9 @@ export class AppComponent implements OnInit, OnDestroy {
     const target:Element = e.target.scrollingElement;
 
     return target.scrollTop + target.clientHeight;
+  }
+
+  setFilter(decade:any) {
+    this.decade = decade;
   }
 }

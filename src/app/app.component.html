@@ -218,8 +218,12 @@
   <h1>Not the movies the world deserves</h1>
   <h2>But, the movies the world needs right now</h2>
 
+  <div class="button-group">
+    <div *ngFor="let d of decades" [ngClass]="{'active':decade==d}" class="button" (click)="setFilter(d)">{{d == 'all' ? 'All' : d+'\'s'}}</div>
+  </div>
+
   <div class="card-container">
-    <Card *ngFor="let movie of movies">
+    <Card *ngFor="let movie of movies | decade:decade">
       <MovieSnippet 
         [title]="movie.Title"
         [releaseDate]="movie.Year"
